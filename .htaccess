@@ -15,13 +15,16 @@
     RewriteRule ^ index.php [L]
 
     # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} ^(.*)
+    #RewriteCond %{HTTP:Authorization} ^(.*)
     #RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
-    #RewriteCond %{HTTP:Authorization} .
+    RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    Header add Access-Control-Allow-Origin "*"
-    Header add Access-Control-Allow-Headers "application/json,authorization"
-    Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE"
 
+
+</IfModule>
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Headers "application/json,authorization"
+    Header set Access-Control-Allow-Methods "PUT, GET, POST, DELETE"
 </IfModule>
