@@ -11,7 +11,11 @@
 |
 */
 
-$app->get('/', function () use ($app) {
+$app->get('/',function(){
+  return App\User::all();
+});
+
+$app->get('/excel', function () use ($app) {
     Excel::create('Laravel Excel', function($excel) {
         $excel->sheet('Excel sheet', function($sheet) {
 
