@@ -30,6 +30,6 @@ $app->post('auth/login', 'AuthController@postLogin');
 $app->group(['middleware' => 'auth:api'], function($app)
 {
     $app->get('/ahay', function() {
-        return response()->json(App\User::all());
+        return response()->json(Auth::user());
     });
 });

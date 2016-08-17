@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\JWTAuth;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -45,6 +46,6 @@ class AuthController extends Controller
 
         }
 
-        return response()->json(compact('token'));
+        return response()->json(['token' => $token,'data' => Auth::user() ]);
     }
 }
