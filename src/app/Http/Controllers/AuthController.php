@@ -21,10 +21,15 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
-        $this->validate($request, [
+        $rules = [
             'email'    => 'required|email|max:255',
             'password' => 'required',
-        ]);
+        ];
+        $message = [
+            'email.required' => 'Email Harus di isi',
+            'password.required' => 'Harus di isi'
+        ];
+        $this->validate($request, $rules,$message);
 
         try {
 
