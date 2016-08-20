@@ -22,7 +22,7 @@ class User extends Model implements JWTSubject, AuthenticatableContract, Authori
     protected $table = 'c_users';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'name', 'email'
+        'name', 'email', 'user_name'
     ];
 
     /**

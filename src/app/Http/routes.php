@@ -18,9 +18,7 @@ $app->get('/',function(){
 $app->get('/excel', function () use ($app) {
     Excel::create('Laravel Excel', function($excel) {
         $excel->sheet('Excel sheet', function($sheet) {
-
             $sheet->setOrientation('landscape');
-
         });
     })->export('xls');
 });
