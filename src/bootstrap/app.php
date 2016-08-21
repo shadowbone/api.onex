@@ -94,6 +94,10 @@ $app->register('Maatwebsite\Excel\ExcelServiceProvider');
 class_alias('Maatwebsite\Excel\Facades\Excel', 'Excel');
 class_alias('Illuminate\Support\Facades\Response', 'Response');
 class_alias('Illuminate\Support\Facades\Config', 'Config');
+/**
+* UUID
+*/
+class_alias('Webpatser\Uuid\Uuid','Uuid');
 
 /*
 |--------------------------------------------------------------------------
